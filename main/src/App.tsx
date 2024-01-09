@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Loader from './components/contextual/loader/Loader'
 import NavBar from './components/navBar/NavBar'
 import Home from './pages/home/Home'
-import NotFound from './pages/notFound/notFound'
+import NotFound from './pages/notFound/NotFound'
 import BreadCrumbs from './components/breadCrumbs/BreadCrumbs'
 import './index.css'
 

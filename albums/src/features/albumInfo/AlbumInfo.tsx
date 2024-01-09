@@ -10,16 +10,14 @@ export default function AlbumInfo (): JSX.Element {
   const [albums, setAlbums] = useState<iAlbum[]>([])
   const params = useParams()
   const address = params?.userId ? URL_PARAMS + params?.userId : URL
-  console.log(params)
 
   useEffect(() => {
     const fetchAlbums = async (): Promise<void> => {
       const response = await fetch(address)
       const data = await response.json() as iAlbum[]
       setAlbums(data)
-      console.log(data)
     }
-    fetchAlbums().catch(e => { console.log(e) })
+    fetchAlbums()
   }, [address])
 
   return (

@@ -18,7 +18,6 @@ export default function AlbumsList (): JSX.Element {
 
   const params = useParams()
   const address = params?.userId ? URL_PARAMS + params?.userId : URL
-  console.log(params)
 
   useEffect(() => {
     const fetchAlbums = async (): Promise<void> => {
@@ -26,7 +25,6 @@ export default function AlbumsList (): JSX.Element {
       const data = await response.json() as iAlbum[]
       setAlbums(data)
       setFilteredAlbums(data)
-      console.log(data)
     }
     fetchAlbums()
   }, [address])

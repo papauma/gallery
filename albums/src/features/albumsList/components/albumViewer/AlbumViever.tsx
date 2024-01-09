@@ -8,7 +8,6 @@ export default function AlbumViever ({ albumId }: { albumId: number }): JSX.Elem
       const response = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
       const data = await response.json()
       setPhotos(data)
-      console.log(data)
     }
     fetchData()
   }, [albumId])
