@@ -1,0 +1,13 @@
+.userInfo {
+    & .userInfo_container {
+        display: flex;
+
+        & .userInfo_information, .userInfo_address {
+            flex: 1;
+        }
+    }
+    & .userInfo_label {
+        font-weight: bold;
+    }
+
+}
