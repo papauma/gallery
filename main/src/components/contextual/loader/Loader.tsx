@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import './loader.scss';
-export default function Loader() {
+import './loader.scss'
+export default function Loader (): JSX.Element {
   return (
     <div className="loader">
         <div className="lds-ellipsis">
@@ -12,5 +12,5 @@ export default function Loader() {
         </div>
         <span>Loading</span>
     </div>
-  );
+  )
 }

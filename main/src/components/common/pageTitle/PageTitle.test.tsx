@@ -1,21 +1,22 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
-import PageTitle from './PageTitle';
+import PageTitle from './PageTitle'
 
-const texto = 'title';
-const cssDescription = 'pageTitle';
+const texto = 'title'
+const cssDescription = 'pageTitle'
 
 describe('PageTitle component', () => {
-    test('PageTitle is rendered', () => {
-      render(<PageTitle text={texto} />);
-      const linkElement = screen.getByText(texto);
-      expect(linkElement).toBeInTheDocument();
-    });
+  test('PageTitle is rendered', () => {
+    render(<PageTitle text={texto} />)
+    const linkElement = screen.getByText(texto)
+    expect(linkElement).toBeInTheDocument()
+  })
 
-    test('PageTitle has true class CSS', () => {
-      const { container } =  render(<PageTitle text={texto}  />);
-      const divElement = container.firstChild;
-      expect(divElement).toHaveClass(cssDescription);
-    });
-});
+  test('PageTitle has true class CSS', () => {
+    const { container } = render(<PageTitle text={texto} />)
+    const divElement = container.firstChild
+    expect(divElement).toHaveClass(cssDescription)
+  })
+})

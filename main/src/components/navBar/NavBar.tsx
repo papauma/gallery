@@ -1,11 +1,11 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './navBar.scss'
 
-export default function NavBar() {
-    const path = useLocation().pathname
+export default function NavBar (): JSX.Element {
+  const path = useLocation().pathname
 
-    return (
+  return (
         <div className="navBar">
             <div className="navbar_logo"><Link to='/'>Gallery.</Link></div>
             <nav className="navBar_list">
@@ -19,5 +19,5 @@ export default function NavBar() {
                 </ul>
             </nav>
         </div>
-    );
+  )
 }

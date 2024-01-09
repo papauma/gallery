@@ -103,7 +103,6 @@ const mockUsersList: iUser[] = [
   }
 ]
 describe('TableUsers component', () => {
-  console.log('ss')
   test('TableUsers is rendered', () => {
     render(<MemoryRouter initialEntries={[{ pathname: '/' }]}><TableUsers usersList={mockUsersList} /></MemoryRouter>)
     const linkElement = screen.getByText(mockUsersList[0].name)
