@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import { type iUser } from '../../model/interfaces'
 
 import PageTitle from 'main/PageTitle'

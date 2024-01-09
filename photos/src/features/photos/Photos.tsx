@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import ArrowButton from '../../components/arrowButton/ArrowButton'
 import PhotoViewer from '../../components/photoViewer/PhotoViewer'
 import ThumbnailButton from '../../components/thumbnailButton/ThumbnailButton'
+import { useParams } from 'react-router-dom'
+
+import PageTitle from 'main/PageTitle'
 
 import './photos.scss'
-import { useParams } from 'react-router-dom'
 
 export default function Photos (): JSX.Element {
   const [photos, setPhotos] = useState([]) as any
@@ -23,6 +25,7 @@ export default function Photos (): JSX.Element {
   return (
     photos?.length
       ? <div className="photos">
+        <PageTitle text='Photos viewer' />
         <div className="photos_viewer">
           <ArrowButton direction={'PREV'} onClick={() => { setSelectedPhoto(selectedphoto - 1) }} disabled={selectedphoto === 0}/>
           <PhotoViewer title={photos[selectedphoto].title} url={photos[selectedphoto].url} id={photos[selectedphoto].id} />

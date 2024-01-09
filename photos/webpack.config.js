@@ -43,7 +43,9 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "photos",
       filename: "photos-app.js",
-      remotes: {},
+      remotes: {
+        "main": 'main@http://localhost:8080/remoteEntry.js',
+      },
       exposes: {
         "./PhotosApp": "./src/App.tsx",
       },

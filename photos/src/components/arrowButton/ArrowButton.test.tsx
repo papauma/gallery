@@ -24,7 +24,7 @@ describe('ArrowButton component', () => {
     const handleClick = jest.fn()
     const texto = '<'
     render(<ArrowButton direction='PREV' onClick={handleClick} />)
-    await userEvent.click(screen.getByText(texto))
+    userEvent.click(screen.getByText(texto))
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
 
@@ -32,7 +32,7 @@ describe('ArrowButton component', () => {
     const handleClick = jest.fn()
     const texto = '<'
     render(<ArrowButton direction='PREV' disabled onClick={handleClick} />)
-    await userEvent.click(screen.getByText(texto))
+    userEvent.click(screen.getByText(texto))
     expect(handleClick).toHaveBeenCalledTimes(0)
   })
 })

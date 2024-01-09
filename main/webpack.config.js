@@ -51,6 +51,7 @@ module.exports = (_, argv) => ({
       exposes: {
         './PageTitle': './src/components/common/pageTitle/PageTitle.tsx',
         './Search': './src/components/common/search/Search.tsx',
+        './Loader': './src/components/contextual/loader/Loader.tsx',
       },
       shared: {
         ...deps,
