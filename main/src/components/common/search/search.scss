@@ -1,0 +1,25 @@
+.search {
+    display: flex;
+    border: 1px solid #d3d3d3;
+    flex-direction: row;
+    gap: 5px;
+    width: 90px;
+    width: 230px;
+    height: 40px;
+    align-items: center;
+    border-radius: 4px;
+    color: #d3d3d3;
+    font-weight: 500;
+
+    & input {
+        border: none;
+        height: 38px;
+        outline: none;
+        border-radius: 4px;
+        padding: 0 5px;
+    }
+
+    & svg {
+        height: 30px;
+    }
+}

@@ -1,0 +1,19 @@
+.photos {
+
+    & .photos_viewer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex: 1;
+        margin-bottom: 40px;
+    }
+
+    & .photos_footer {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        width: 90%;
+        margin: auto;
+        overflow: hidden;
+    }
+}

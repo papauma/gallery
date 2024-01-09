@@ -1,0 +1,51 @@
+.navBar {
+    color: #3f3e3e;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid #d3d3d3;
+    width: 100%;
+    padding: 10px;
+
+    & .navbar_logo {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 150px;
+        margin-right: 50px;
+
+        & a, a:visited, a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    & .navBar_list{
+        list-style: none;
+        width: 50%;
+
+        & .navBar_options {
+            list-style: none;
+            display: inline-flex;
+            gap: 25px;
+
+            & .navBar_option {
+                padding: 5px 10px;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #eeebeb;
+                }
+
+                & a, a:visited, a:active {
+                    text-decoration: none;
+                    color: inherit;
+                }
+
+                &.navBar_option--selected {
+                    background-color: #eeebeb;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

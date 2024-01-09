@@ -1,0 +1,21 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    justify-content: center;
+    align-items: baseline;
+    justify-items: center;
+    width: 80%;
+    margin: auto;
+    color: #3f3e3e;
+
+    & .home_title {
+        margin: 10px;
+        width: 250px;
+    }
+    & .home_subtitle {
+        color: #615e5e;
+        font-size: 15px;
+        font-weight: normal;
+    }
+}
