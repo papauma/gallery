@@ -14,13 +14,8 @@
     "plugins": [
         "react"
     ],
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
-    },
     "rules": {
-        "no-console": "warn",
-        "@typescript-eslint/no-floating-promises": "off"
+        "@typescript-eslint/no-floating-promises": "off",
+        "no-console": "warn"
     }
 }
