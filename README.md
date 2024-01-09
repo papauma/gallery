@@ -25,9 +25,11 @@ Además se ha generado una cuarta aplicación con soble funcinoalidad. Por un la
 <i>Esta cuarta aplicación tiene una doble misión porque hay pocos componentes compartidos, en una aplicación más compleja sería conveniente generar una aplicación sólo para componentes reutilizables, así como para estilos, etc... Se podría usar, por ejemplo, styled-components</i>
 
 <h2>Uso del proyecto</h2>
-Para hacer uso del proyecto en un entorno de local, es necesario arrancar cada una de las aplicaciones de manera independiente mediante el comando <b>npm start</b>
-De la misma manera, se pueden lanzar los test de cada las aplicaciones mediante el comando <b>npm run test</b>
-También se puede hacer uso del linter mediante el comando <b>npm run lint</b>
+<ul>
+  <li>Para hacer uso del proyecto en un entorno de local, es necesario arrancar cada una de las aplicaciones de manera independiente mediante el comando <b>npm start</b></li>
+  <li>De la misma manera, se pueden lanzar los test de cada las aplicaciones mediante el comando <b>npm run test</b></li>
+  <li>También se puede hacer uso del linter mediante el comando <b>npm run lint</b></li>
+</ul>
 
 <h2>Tecnologías utilizadas</h2>
 <ul>
