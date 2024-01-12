@@ -1,0 +1,11 @@
+& .albumsList {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & div {
+        flex: 0 0 calc(16% - 25px);
+        text-align: center;
+    }
+}

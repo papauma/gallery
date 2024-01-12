@@ -1,6 +1,6 @@
 export interface iGeo {
-  lat: number
-  lng: number
+  lat?: number
+  lng?: number
 }
 export interface iAddres {
   street: string

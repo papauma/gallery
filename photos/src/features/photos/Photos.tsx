@@ -6,11 +6,13 @@ import { useParams } from 'react-router-dom'
 import { type iPhoto } from '../../models/interfaces'
 
 import PageTitle from 'main/PageTitle'
+import Loader from 'main/Loader'
 
 import './photos.scss'
 
 export default function Photos (): JSX.Element {
   const [photos, setPhotos] = useState<iPhoto[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
   const [selectedphoto, setSelectedPhoto] = useState<number>(0)
   const albumId = useParams().albumId
 
@@ -19,12 +21,15 @@ export default function Photos (): JSX.Element {
       const response = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
       const data = await response.json() as iPhoto[]
       setPhotos(data)
+      setLoading(false)
     }
     fetchData()
   }, [albumId])
 
   return (
-     <div className="photos">
+    loading
+      ? <Loader />
+      : <div className="photos">
         {((photos?.length) !== 0)
           ? <>
         <PageTitle text='Photos viewer' />

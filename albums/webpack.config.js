@@ -48,7 +48,7 @@ module.exports = (_, argv) => ({
       },
       exposes: {
         "./AlbumsApp": "./src/App.tsx",
-        './AlbumsList': './src/features/albumsList/AlbumsList.tsx',
+        './AlbumsList': './src/features/albums/Albums.tsx',
       },
       shared: {
         ...deps,
