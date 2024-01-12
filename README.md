@@ -41,6 +41,7 @@ Además se ha generado una cuarta aplicación con soble funcinoalidad. Por un la
   <li>SASS</li>
   <li>Jest</li>
   <li>Eslint y prettier</li>
+  <li>React Leaflet</li>
 </ul>
 
 
