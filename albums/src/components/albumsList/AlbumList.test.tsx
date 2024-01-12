@@ -1,7 +1,7 @@
 import React from 'react'
 
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import { prettyDOM, render, screen } from '@testing-library/react'
 
 import AlbumList from './AlbumList'
 import { type iAlbum } from '../../model/interfaces'
@@ -42,14 +42,13 @@ describe('AlbumList component', () => {
   })
 
   test('TableUsers number rows is correct', () => {
-    render(<MemoryRouter initialEntries={[{ pathname: '/' }]}><AlbumList listOfAlbums={mockAlbumsList} /></MemoryRouter>)
-    const linkElement = screen.getAllByRole('row')
-    const rows = linkElement.length
-    expect(rows).toEqual(mockAlbumsList.length + 1)
+    const { container } = render(<MemoryRouter initialEntries={[{ pathname: '/' }]}><AlbumList listOfAlbums={mockAlbumsList} /></MemoryRouter>)
+    const albumCovers = container.getElementsByClassName('albumCover')
+    expect(albumCovers.length).toEqual(mockAlbumsList.length)
   })
 
   test('TableUsers void appers message no results', () => {
-    const text = 'There are no results.'
+    const text = 'No albums'
     render(<MemoryRouter initialEntries={[{ pathname: '/' }]}><AlbumList listOfAlbums={[]} /></MemoryRouter>)
     const linkElement = screen.getByText(text)
     expect(linkElement).toBeInTheDocument()
