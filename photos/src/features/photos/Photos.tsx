@@ -3,28 +3,30 @@ import ArrowButton from '../../components/arrowButton/ArrowButton'
 import PhotoViewer from '../../components/photoViewer/PhotoViewer'
 import ThumbnailButton from '../../components/thumbnailButton/ThumbnailButton'
 import { useParams } from 'react-router-dom'
+import { type iPhoto } from '../../models/interfaces'
 
 import PageTitle from 'main/PageTitle'
 
 import './photos.scss'
 
 export default function Photos (): JSX.Element {
-  const [photos, setPhotos] = useState([]) as any
+  const [photos, setPhotos] = useState<iPhoto[]>([])
   const [selectedphoto, setSelectedPhoto] = useState<number>(0)
   const albumId = useParams().albumId
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       const response = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
-      const data = await response.json()
+      const data = await response.json() as iPhoto[]
       setPhotos(data)
     }
     fetchData()
   }, [albumId])
 
   return (
-    photos?.length
-      ? <div className="photos">
+     <div className="photos">
+        {((photos?.length) !== 0)
+          ? <>
         <PageTitle text='Photos viewer' />
         <div className="photos_viewer">
           <ArrowButton direction={'PREV'} onClick={() => { setSelectedPhoto(selectedphoto - 1) }} disabled={selectedphoto === 0}/>
@@ -37,7 +39,8 @@ export default function Photos (): JSX.Element {
               <ThumbnailButton photo={photo} onClick={() => { setSelectedPhoto(index) }} key={photo.id}/>
             ))}
         </div>
+        </>
+          : <div>No photos</div>}
       </div>
-      : <></>
   )
 };

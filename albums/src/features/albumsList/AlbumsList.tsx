@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { type iAlbum } from './model/interfaces'
 import { useParams } from 'react-router-dom'
 import AlbumCover from '../../components/albumCover/AlbumCover'
+
 import PageTitle from 'main/PageTitle'
 import Search from 'main/Search'
 
@@ -17,7 +18,7 @@ export default function AlbumsList (): JSX.Element {
   const [searchValue, setSearchValue] = useState<string>('')
 
   const params = useParams()
-  const address = params?.userId ? URL_PARAMS + params?.userId : URL
+  const address = ((params?.userId) != null) ? URL_PARAMS + params?.userId : URL
 
   useEffect(() => {
     const fetchAlbums = async (): Promise<void> => {
