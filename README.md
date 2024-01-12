@@ -28,7 +28,10 @@ Además se ha generado una cuarta aplicación con soble funcinoalidad. Por un la
 <ul>
   <li>Para hacer uso del proyecto en un entorno de local, es necesario arrancar cada una de las aplicaciones de manera independiente mediante el comando <b>npm start</b></li>
   <li>De la misma manera, se pueden lanzar los test de cada las aplicaciones mediante el comando <b>npm run test</b></li>
-  <li>También se puede hacer uso del linter mediante el comando <b>npm run lint</b></li>
+  <li>También se puede hacer uso del linter mediante el uso de los comandos:
+    <ul>
+      <li><b>npx eslint src/**/*.tsx</b></li></li>
+      <li><b>npx eslint src/**/*.ts</b></li>
 </ul>
 
 <h2>Tecnologías utilizadas</h2>
