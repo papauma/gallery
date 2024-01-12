@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './albumList.scss'
-import { type iAlbum } from '../../features/albumsList/model/interfaces'
+import { type iAlbum } from '../../model/interfaces'
 import AlbumCover from '../albumCover/AlbumCover'
 
 interface iAlbumList {

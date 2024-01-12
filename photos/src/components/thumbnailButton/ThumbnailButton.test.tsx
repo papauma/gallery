@@ -18,10 +18,10 @@ describe('ThumbnailButton component', () => {
     expect(linkElement).toBeInTheDocument()
   })
 
-  test('ThumbnailButton is clicked ', async () => {
+  test('ThumbnailButton is clicked ', () => {
     const handleClick = jest.fn()
     render(<ThumbnailButton photo={mockPhoto} onClick={handleClick}/>)
-    await userEvent.click(screen.getByAltText(mockPhoto.title))
+    userEvent.click(screen.getByAltText(mockPhoto.title))
     expect(handleClick).toHaveBeenCalledTimes(1)
   })
 })

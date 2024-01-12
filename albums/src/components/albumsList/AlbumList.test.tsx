@@ -1,7 +1,7 @@
 import React from 'react'
 
 import '@testing-library/jest-dom'
-import { prettyDOM, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 
 import AlbumList from './AlbumList'
 import { type iAlbum } from '../../model/interfaces'

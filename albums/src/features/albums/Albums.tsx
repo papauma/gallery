@@ -8,8 +8,11 @@ import Search from 'main/Search'
 import Loader from 'main/Loader'
 
 import './albums.scss'
+import Paginator from './components/paginator/Paginator'
 
-const URL = 'https://jsonplaceholder.typicode.com/albums?_start=0&_limit=20'
+const LIMIT = 20
+const START = 0
+const URL = 'https://jsonplaceholder.typicode.com/albums'
 const URL_PARAMS = 'https://jsonplaceholder.typicode.com/albums?userId='
 
 export default function Albums (): JSX.Element {
@@ -17,12 +20,14 @@ export default function Albums (): JSX.Element {
   const [filteredAlbums, setFilteredAlbums] = useState<iAlbum[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(true)
+  const [startApi, setStartApi] = useState<number>(START)
 
   const params = useParams()
-  const address = ((params?.userId) != null) ? URL_PARAMS + params?.userId : URL
+  // console.log(address)
 
   useEffect(() => {
     const fetchAlbums = async (): Promise<void> => {
+      const address = ((params?.userId) != null) ? URL_PARAMS + params?.userId : URL + `?_start=${startApi}&_limit=${LIMIT}`
       const response = await fetch(address)
       const data = await response.json() as iAlbum[]
       setAlbums(data)
@@ -30,7 +35,7 @@ export default function Albums (): JSX.Element {
       setLoading(false)
     }
     fetchAlbums()
-  }, [address])
+  }, [startApi])
 
   useEffect(() => {
     setLoading(true)
@@ -47,6 +52,7 @@ export default function Albums (): JSX.Element {
         <Search placeholder='Filter albums by a field...' returnAction={(param: string) => { setSearchValue(param) }} />
       </div>
       <AlbumList listOfAlbums={filteredAlbums} />
+      <Paginator init={0} limit={LIMIT} onPrev={() => { setStartApi(startApi - LIMIT) }} onNext={() => { setStartApi(startApi + LIMIT) }} />
     </div>
   )
 }
