@@ -1,0 +1,25 @@
+.paginator {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 0;
+    gap: 7px;
+
+    & .paginator_item{
+        font-size: 12px;
+        color: #3f3e3e;
+
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        &.paginator_item--disabled {
+            color: #d3d3d3;
+            &:hover {
+                cursor: default;
+                text-decoration: none;
+            }
+        }
+    }
+
+}
