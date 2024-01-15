@@ -11,8 +11,7 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Jack Herrington",
-    "email": "jherr@pobox.com"
+    "name": "Salva Escriva"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
