@@ -2,7 +2,7 @@ const headers = {
   'Content-Type': 'application/json'
 }
 
-const get = async <T>(url: string) => {
+const get = async <T>(url: string): Promise<T> => {
   const response = await fetch(url, {
     method: 'GET',
     headers
@@ -10,7 +10,7 @@ const get = async <T>(url: string) => {
   return await response.json() as T
 }
 
-const post = async <T>(url: string, body: any) => {
+const post = async <T>(url: string, body: any): Promise<T> => {
   const response = await fetch(url, {
     method: 'POST',
     headers,
@@ -19,7 +19,7 @@ const post = async <T>(url: string, body: any) => {
   return await response.json() as T
 }
 
-const put = async <T>(url: string, body: any) => {
+const put = async <T>(url: string, body: any): Promise<T> => {
   const response = await fetch(url, {
     method: 'PUT',
     headers,
@@ -28,7 +28,7 @@ const put = async <T>(url: string, body: any) => {
   return await response.json() as T
 }
 
-const _delete = async <T>(url: string) => {
+const _delete = async <T>(url: string): Promise<T> => {
   const response = await fetch(url, {
     method: 'DELETE',
     headers
