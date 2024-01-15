@@ -7,7 +7,7 @@ export default function BreadCrumbs (): JSX.Element {
   const location = useLocation().pathname
 
   const prepareBreadCumbs = (): IBreadCrumbsItem[] => {
-    if (!location) return []
+    if (location.length === 0) return []
     if (location.includes('/users/')) return [{ label: 'Home', path: '/' }, { label: 'Users', path: '/users' }]
     if (location.includes('/albums/')) return [{ label: 'Home', path: '/' }, { label: 'Albums', path: '/albums' }]
     if (location.includes('/photos/')) return [{ label: 'Home', path: '/' }, { label: 'Albums', path: '/albums' }]

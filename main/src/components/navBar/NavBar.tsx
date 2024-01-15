@@ -21,4 +21,4 @@ function NavBar (): JSX.Element {
         </div>
   )
 }
-export default React.memo(NavBar);
+export default React.memo(NavBar)
