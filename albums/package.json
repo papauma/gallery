@@ -7,7 +7,8 @@
     "build:start": "cd dist && PORT=8082 npx serve",
     "start": "webpack serve --open --mode development",
     "start:live": "webpack serve --open --mode development --live-reload --hot",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "lint": "eslint ./src/**/*.{js,ts,tsx}"
   },
   "license": "MIT",
   "author": {
