@@ -1,0 +1,19 @@
+.userInfo {
+    & .userInfo_container {
+        display: flex;
+
+        & .userInfo_information, .userInfo_address {
+            flex: 1;
+        }
+    }
+    & .userInfo_label {
+        font-weight: bold;
+    }
+
+    & .userInfo_buttonContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+}

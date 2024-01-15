@@ -47,8 +47,8 @@ module.exports = (_, argv) => ({
         "main": 'main@http://localhost:8080/remoteEntry.js',
       },
       exposes: {
-        "./UsersApp": "./src/App.tsx",
-        './UsersList': './src/features/usersList/UsersList.tsx',
+        "./UsersApp": "./src/infrastructure/components/App/App.tsx",
+        './UsersList': './src/infrastructure/components/UserList/UserList.tsx',
       },
       shared: {
         ...deps,

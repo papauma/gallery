@@ -1,0 +1,49 @@
+.userList {
+
+    & .users_title {
+        color: #3f3e3e;
+    }
+
+    & .num_results {
+        text-align: right;
+        font-size: small;
+        margin-top: 10px;
+    }
+
+    & .users_filter{
+        display: flex;
+        justify-content: end;
+        margin-bottom: 20px;
+    }
+
+    & .users_list {
+        border: 1px solid #eeebeb;
+        padding: 5px;
+        border-radius: 3px;
+        width: 100%;
+    }
+
+    & .users_listHeader {
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        height: 25px;
+    }
+
+    & .users_row {
+        &:nth-child(even) {
+            background-color: #eeebeb;
+        }
+        &:nth-child(odd) {
+            background-color: #fdf9f9;
+        }
+        & td {
+            padding: 5px;
+            border: 1px solid #eeebeb;
+        }
+
+        & .users_cell--action {
+            text-align: center;
+        }
+    }
+}

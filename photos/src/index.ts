@@ -1,2 +1,2 @@
-import("./Wrapper");
+import('./Wrapper')
 export {}
