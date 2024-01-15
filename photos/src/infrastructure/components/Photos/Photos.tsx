@@ -20,8 +20,7 @@ export default function Photos (): JSX.Element {
   const albumId = useParams().albumId
   useEffect(() => {
     if (albumId !== undefined) {
-      PhotosService.getPhotosFromAlbum(parseInt(albumId)).then(setPhotos)
-      setLoading(false)
+      PhotosService.getPhotosFromAlbum(parseInt(albumId)).then(setPhotos).finally(() => { setLoading(false) })
     }
   }, [albumId])
 

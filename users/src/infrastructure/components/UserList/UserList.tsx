@@ -14,8 +14,7 @@ export default function UserList (): JSX.Element {
   const [loading, setLoading] = React.useState<boolean>(true)
 
   React.useEffect(() => {
-    UsersService.getUsers().then(setUsers)
-    setLoading(false)
+    UsersService.getUsers().then(setUsers).finally(() => { setLoading(false) })
   }, [])
 
   const onChange = (paramSearch: string): void => {

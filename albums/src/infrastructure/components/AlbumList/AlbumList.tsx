@@ -17,8 +17,7 @@ export default function AlbumList (): JSX.Element {
   // const [startApi, setStartApi] = React.useState<number>(0)
 
   React.useEffect(() => {
-    AlbumsService.getAlbums().then(setAlbums)
-    setLoading(false)
+    AlbumsService.getAlbums().then(setAlbums).finally(() => { setLoading(false) })
   }, [])
 
   const onChange = (paramSearch: string): void => {
