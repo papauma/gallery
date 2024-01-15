@@ -19,8 +19,7 @@ export default function UserList (): JSX.Element {
 
   React.useEffect(() => {
     if (userId !== undefined) {
-      UsersService.getUserById(parseInt(userId)).then(user => { setUserData(user) })
-      setLoading(false)
+      UsersService.getUserById(parseInt(userId)).then(user => { setUserData(user) }).finally(() => { setLoading(false) })
     }
   }, [userId])
 

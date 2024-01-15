@@ -15,8 +15,7 @@ export default function AlbumInfo (): JSX.Element {
 
   useEffect(() => {
     if (userId !== undefined) {
-      AlbumsService.getAlbumsByUserId(parseInt(userId)).then(albums => { setAlbumData(albums) })
-      setLoading(false)
+      AlbumsService.getAlbumsByUserId(parseInt(userId)).then(albums => { setAlbumData(albums) }).finally(() => { setLoading(false) })
     }
   }, [userId])
 
