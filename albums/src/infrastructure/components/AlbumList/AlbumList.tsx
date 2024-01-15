@@ -33,7 +33,7 @@ export default function AlbumList (): JSX.Element {
                 <Search placeholder='Filter albums by a field...' returnAction={(param: string) => { onChange(param) }} />
             </div>
             <ListAlbums listOfAlbums={albums} />
-           <Paginator init={0} limit={LIMIT_RESULTS_API} onPrev={() => { setStartApi(startApi - LIMIT_RESULTS_API) }} onNext={() => { setStartApi(startApi + LIMIT_RESULTS_API) }} />
+           <Paginator init={0} limit={LIMIT_RESULTS_API} onPrev={() => { setStartApi(startApi - LIMIT_RESULTS_API) }} onNext={() => { setStartApi(startApi + LIMIT_RESULTS_API) }} disabledNext = {albums.length === 0}/>
         </div>
   )
 }
