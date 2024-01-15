@@ -12,7 +12,7 @@ Para la implementación del proyecto se han generado diferentes microfrontends c
 El motivo por el que se opta por la utilización de microfrontends es porque se trata de un patrón arquitectónico en la construcción de aplicaciones web que consiste en dividir la aplicación web en partes más pequeñas y autónomas, que se pueden desarrollar, testar y desplegar de forma independiente.
 
 <h2>Estado del proyecto</h2>
-El proyecto se encuentra en construción
+El proyecto se encuentra en continua evolución
 
 <h2>Características de la aplicación</h2>
 En este caso, para la organización en microfontends se ha optado por la utilización de <B>Module Federation</B>. Se trata de una carácterística de Webpack 5 que permite a las aplicaciones web compartir módulos y dependencias de JavaScript entre sí en tiempo de ejecución de forma dinámica sin la necesidad de incluirlos en la compilación.
@@ -23,6 +23,11 @@ A nivel organizativo se han creado 3 aplicaciones (microfrontend). Cada una se e
 Además se ha generado una cuarta aplicación con soble funcinoalidad. Por un lado gobernará toda la aplicación, mostrando cada microfrontend anterior cuando sea requerido; y por otro, proveerá de aquellos componentes comunes en todos los microfrontends con el fin de poder reutilizar el máximo número de componentes y no tener que duplicarlos.
 
 <i>Esta cuarta aplicación tiene una doble misión porque hay pocos componentes compartidos, en una aplicación más compleja sería conveniente generar una aplicación sólo para componentes reutilizables, así como para estilos, etc... Se podría usar, por ejemplo, styled-components</i>
+
+Para las tres aplicaciones funcionales se optado por usar una <b>arquitectura hexagonal</b>. La idea principal de esta arquitectura es la estructuración en torno a su núcleo funcional y mediante puertos y adaptadores realizar las interacciones entre elementos. 
+<i>Para la aplicación main no se ha usado esta organización debdo a su simplicidad y que sólo actua como distribuidor de aplicaciones y almacen de componentes comunes<i>
+
+Se podría plantear el dilema de porqué no usar una <b>arquitectura clean</b> para este proyecto. De hecho, la idea inicial era usar este tipo de arquitectura, no obstante, dado que cada una de las aplicaciones sólo presenta uno o dos casos de uso (como máximo) se ha optado por utilizar la arquitectura de tipo hexagonal por ser más simple. DE cara a una posible evolución de la aplicación, si se desea añadir más funcinalidades no dudaría en ampliar la arquitectura y pasarla a tipo clean, añadiendo los <i>use cases</i> necesarios.
 
 <h2>Uso del proyecto</h2>
 <ul>
